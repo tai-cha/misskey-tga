@@ -78,6 +78,11 @@ jobs:
         echo "::add-mask::$TUNNEL_DOMAIN"
         echo "TUNNEL_DOMAIN=$TUNNEL_DOMAIN" >> $GITHUB_ENV
 
+    - name: Prepare Corepack latest
+      run: |
+        npm install -g corepack@latest
+        corepack enable && corepack prepare pnpm@latest
+
     - name: Install misskey
       run: |
         wget https://raw.githubusercontent.com/joinmisskey/bash-install/v4/misskey-install.sh
