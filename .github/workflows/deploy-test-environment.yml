@@ -42,6 +42,9 @@ on:
         type: string
         required: false
 
+env:
+  COREPACK_DEFAULT_TO_LATEST: 0
+
 jobs:
   deploy-test-environment:
     runs-on: ubuntu-latest
